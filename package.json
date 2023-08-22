@@ -14,7 +14,7 @@
     "organization": true
   },
   "devDependencies": {
-    "@linzjs/style": "^4.0.0",
+    "@linzjs/style": "^4.2.0",
     "@types/node": "^20.1.2"
   },
   "scripts": {
