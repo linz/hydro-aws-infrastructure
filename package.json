@@ -1,0 +1,36 @@
+{
+  "name": "@linz/template-javascript-hello-world",
+  "version": "0.1.0",
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linz/template-javascript-hello-world.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Land Information New Zealand",
+    "url": "https://linz.govt.nz",
+    "organization": true
+  },
+  "devDependencies": {
+    "@linzjs/style": "^4.0.0",
+    "@types/node": "^20.1.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "lint": "npx eslint . --ignore-path .gitignore",
+    "test": "node --test"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "files": [
+    "build/src/**"
+  ]
+}
