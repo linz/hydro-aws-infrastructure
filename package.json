@@ -32,5 +32,9 @@
   },
   "files": [
     "build/src/**"
+  ],
+  "private": true,
+  "workspaces": [
+    "default"
   ]
 }
