@@ -9,13 +9,13 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Land Information New Zealand",
+    "name": "Toitū Te Whenua Land Information New Zealand",
     "url": "https://linz.govt.nz",
     "organization": true
   },
   "devDependencies": {
-    "@linzjs/style": "^4.0.0",
-    "@types/node": "^20.1.2"
+    "@linzjs/style": "^4.2.0",
+    "@types/node": "^20.5.5"
   },
   "scripts": {
     "build": "tsc",
