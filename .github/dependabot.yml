@@ -9,7 +9,6 @@ updates:
     schedule:
       interval: daily
     commit-message:
-      prefix: 'feat'
-      prefix-development: 'build'
+      prefix: 'build'
       include: 'scope'
     open-pull-requests-limit: 10
