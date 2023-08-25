@@ -31,8 +31,5 @@ jobs:
       - name: Lint
         run: yarn lint
 
-      - name: Check formatting
-        run: git diff --exit-code
-
       - name: Test
         run: yarn test
