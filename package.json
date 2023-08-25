@@ -1,11 +1,11 @@
 {
-  "name": "@linz/template-javascript-hello-world",
+  "name": "@linz/hydro-aws-infrastructure",
   "version": "0.1.0",
   "main": "build/src/index.js",
   "types": "build/src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/linz/template-javascript-hello-world.git"
+    "url": "https://github.com/linz/hydro-aws-infrastructure.git"
   },
   "license": "MIT",
   "author": {
