@@ -4,6 +4,14 @@
 
 Code to deploy AWS LI Hydro surveys infrastructure.
 
+## Infrastructure
+
+The result of deploying this should be a stack called "HydroSurveyStack" containing the following:
+
+- A landing zone bucket where survey providers can upload their surveys.
+- A processing bucket where Hydro employees can work on surveys.
+- A consumption bucket where the public can retrieve survey processing outputs.
+
 ## Setup
 
 Prerequisites:
@@ -12,6 +20,8 @@ Prerequisites:
 
 1. Run `nvm install && nvm use` within this project root to use the configured Node.js version. Repeat this and following steps when `.nvmrc` changes.
 1. Install packages (repeat when `package-lock.json` changes):
+   1. Generate a new [GitHub personal access token (PAT)](https://github.com/settings/tokens/new) with the access "read:packages".
+   1. Run `export NODE_AUTH_TOKEN=[the PAT value]` to allow access to install private packages from GitHub within the current shell.
    1. If you're just _deploying_ and not doing development, run `npm install --omit=dev` to install only production packages.
    1. If you're doing _development:_
       - Run `npm install` to install all packages.
