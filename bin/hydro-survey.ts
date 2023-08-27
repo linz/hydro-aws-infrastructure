@@ -3,10 +3,10 @@ import 'source-map-support/register';
 
 import * as cdk from 'aws-cdk-lib';
 
-import { HydroAwsInfrastructureStack } from '../lib/hydro-aws-infrastructure-stack';
+import { HydroSurveyStack } from '../lib/hydro-survey-stack';
 
 const app = new cdk.App();
-new HydroAwsInfrastructureStack(app, 'HydroAwsInfrastructureStack', {
+new HydroSurveyStack(app, 'HydroSurveyStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
