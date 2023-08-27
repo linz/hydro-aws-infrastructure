@@ -6,9 +6,16 @@ Code to deploy infrastructure on the "AWS LI Hydro Surveys Prod" account (#43477
 
 ## Use
 
-TODO
+* `yarn cdk deploy` deploy this stack to your default AWS account/region
+* `yarn cdk diff` compare deployed stack with current state
+* `yarn cdk synth` emits the synthesized CloudFormation template
 
 ## Development
+
+* `yarn build` compile typescript to js
+* `yarn watch` watch for changes and compile
+* `yarn lint` check file formatting
+* `yarn test` perform the jest unit tests
 
 ### Setup
 
@@ -19,7 +26,3 @@ Prerequisites:
 1. Run `nvm install && nvm use` within this project root to use the configured Node.js version. Repeat this and following steps when `.nvmrc` changes.
 1. Run `npm update --global yarn` to install the latest Yarn version.
 1. Run `yarn` to install packages. Repeat when `yarn.lock` changes.
-
-### Run tasks
-
-Now you can run `yarn SCRIPT` for any of the `scripts` defined in [`package.json`](package.json).

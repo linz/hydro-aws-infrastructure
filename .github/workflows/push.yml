@@ -6,6 +6,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
+
+    # Limit deploys to one at a time
+    concurrency: deploy-${{ github.ref }}
+
+    permissions:
+      id-token: write
+      contents: write
+
     steps:
       - uses: actions/checkout@v4.0.0
         with:
@@ -45,3 +53,14 @@ jobs:
 
       - name: Test
         run: yarn test
+
+      - name: Configure AWS Credentials
+        if: github.ref == 'refs/heads/master' && github.repository == 'linz/hydro-aws-infrastructure'
+        uses: aws-actions/configure-aws-credentials@v3.0.1
+        with:
+          aws-region: ap-southeast-2
+          role-to-assume: ${{ secrets.AWS_ROLE_PROD }}
+
+      - name: Deploy
+        if: github.ref == 'refs/heads/master' && github.repository == 'linz/hydro-aws-infrastructure'
+        run: yarn cdk deploy --require-approval=never hydro-aws-infrastructure-stack
