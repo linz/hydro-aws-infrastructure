@@ -1,5 +1,7 @@
 # Hydro AWS infrastructure
 
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
+
 Code to deploy infrastructure on the "AWS LI Hydro Surveys Prod" account (#434775598764).
 
 ## Use
