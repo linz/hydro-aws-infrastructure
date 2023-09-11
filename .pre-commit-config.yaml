@@ -7,3 +7,10 @@ repos:
     hooks:
       - id: gitlint
       - id: gitlint-ci
+
+  - repo: https://gitlab.com/engmark/sort-hook
+    rev: 0a02a53300766e593f17f5cb4670ee8eb208bd81 # frozen: v2
+    hooks:
+      - id: sort
+        types_or: [gitignore]
+        stages: [commit]
