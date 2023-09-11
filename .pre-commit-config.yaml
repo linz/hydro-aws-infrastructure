@@ -14,7 +14,3 @@ repos:
       - id: sort
         types_or: [gitignore]
         stages: [commit]
-
-  - repo: meta
-    hooks:
-      - id: check-hooks-apply
