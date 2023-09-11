@@ -43,5 +43,9 @@ jobs:
         run: pre-commit run --hook-stage=manual --verbose
         if: github.ref != 'refs/heads/${{ github.event.repository.default_branch }}'
 
+      - name: Lint all content
+        run: pre-commit run --all-files
+        if: github.ref != 'refs/heads/${{ github.event.repository.default_branch }}'
+
       - name: Test
         run: yarn test
