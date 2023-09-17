@@ -30,8 +30,13 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Setup Python
+      - name: Get Python version
+        run: echo "PYTHON_VERSION=$(cat .python-version)" >> "$GITHUB_ENV"
+
+      - name: Setup Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v4.7.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
 
       - name: Install pre-commit
         run: pip install pre-commit
