@@ -15,7 +15,7 @@ Code to deploy infrastructure on the "AWS LI Hydro Surveys Prod" account (#43477
 * `npm run build` compile typescript to js
 * `npm run watch` watch for changes and compile
 * `npm run lint` check file formatting
-* `npm run test` perform the jest unit tests
+* `npm run test` run the unit tests
 
 ### Setup
 
