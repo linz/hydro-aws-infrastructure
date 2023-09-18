@@ -33,7 +33,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint . --ignore-path .gitignore",
+    "lint": "eslint --fix --ignore-path=.gitignore .",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk"
