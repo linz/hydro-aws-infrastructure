@@ -1,16 +1,27 @@
-// import * as cdk from 'aws-cdk-lib';
-// import { Template } from 'aws-cdk-lib/assertions';
-// import * as HydroAwsInfrastructure from '../lib/hydro-aws-infrastructure-stack';
+import { test } from 'node:test';
 
-// example test. To run these tests, uncomment this file along with the
-// example resource in lib/hydro-aws-infrastructure-stack.ts
-test('SQS Queue Created', () => {
-  //   const app = new cdk.App();
-  //     // WHEN
-  //   const stack = new HydroAwsInfrastructure.HydroAwsInfrastructureStack(app, 'MyTestStack');
-  //     // THEN
-  //   const template = Template.fromStack(stack);
-  //   template.hasResourceProperties('AWS::SQS::Queue', {
-  //     VisibilityTimeout: 300
-  //   });
+import { App } from 'aws-cdk-lib';
+
+import { HydroAwsInfrastructureStack } from '../lib/hydro-aws-infrastructure-stack';
+
+test('Should be able to instantiate stack', () => {
+  const app = new App();
+  new HydroAwsInfrastructureStack(app, anyStackId());
 });
+
+function anyStackId(): string {
+  // 1 to 64 alphanumeric characters, starting with an alpha character
+  const alphas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
+  const alphaNumerics = alphas + '0123456789';
+  const characterCount = anyNonNegativeInteger(63);
+
+  let result = alphas.charAt(anyNonNegativeInteger(alphas.length));
+  for (let counter = 0; counter < characterCount; counter++) {
+    result += alphaNumerics.charAt(anyNonNegativeInteger(alphaNumerics.length));
+  }
+  return result;
+}
+
+function anyNonNegativeInteger(stop: number): number {
+  return Math.floor(Math.random() * stop);
+}

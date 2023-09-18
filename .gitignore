@@ -3,7 +3,6 @@
 
 # TypeScript
 *.js
-!jest.config.js
 *.d.ts
 *.js.map
 *.tsbuildinfo
