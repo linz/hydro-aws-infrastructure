@@ -22,7 +22,7 @@ jobs:
       - name: Get Node.js version
         run: echo "NODE_VERSION=$(cat .nvmrc)" >> "$GITHUB_ENV"
 
-      - name: Build and test
+      - name: Build and test with Node.js ${{ env.NODE_VERSION }}
         uses: linz/action-typescript@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
