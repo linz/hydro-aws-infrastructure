@@ -41,6 +41,10 @@ jobs:
       - name: Install pre-commit
         run: pip install pre-commit
 
+      - name: Lint files in non-${{ github.event.repository.default_branch }} branches
+        run: pre-commit run --all-files --verbose
+        if: github.ref != 'refs/heads/${{ github.event.repository.default_branch }}'
+
       - name: Check all commit messages in non-${{ github.event.repository.default_branch }} branches
         run: pre-commit run --hook-stage=manual --verbose
         if: github.ref != 'refs/heads/${{ github.event.repository.default_branch }}'
