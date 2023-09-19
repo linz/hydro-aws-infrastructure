@@ -14,6 +14,17 @@ repos:
       - id: prettier
         stages: [commit]
 
+  - repo: local
+    hooks:
+      - id: pathchk
+        name: pathchk
+        entry: pathchk
+        args: [--portability]
+        types: [file]
+        exclude: ^([a-zA-Z0-9._][a-zA-Z0-9._-]+)(/[a-zA-Z0-9._][a-zA-Z0-9._-]+)*$ # https://lists.gnu.org/archive/html/coreutils/2023-01/msg00006.html
+        language: system
+        stages: [commit]
+
   - repo: meta
     hooks:
       - id: check-useless-excludes
