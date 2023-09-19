@@ -14,6 +14,13 @@ repos:
       - id: prettier
         stages: [commit]
 
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: ebdf1faf0ebf43b29c659da8741252c925e690c8 # frozen: 0.26.3
+    hooks:
+      - id: check-github-workflows
+        name: Check Github workflows
+        stages: [commit]
+
   - repo: local
     hooks:
       - id: pathchk
