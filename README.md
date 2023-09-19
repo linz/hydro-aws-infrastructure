@@ -6,16 +6,16 @@ Code to deploy infrastructure on the "AWS LI Hydro Surveys Prod" account (#43477
 
 ## Use
 
-* `npm run cdk deploy` deploy this stack to your default AWS account/region
-* `npm run cdk diff` compare deployed stack with current state
-* `npm run cdk synth` emits the synthesized CloudFormation template
+- `npm run cdk deploy` deploy this stack to your default AWS account/region
+- `npm run cdk diff` compare deployed stack with current state
+- `npm run cdk synth` emits the synthesized CloudFormation template
 
 ## Development
 
-* `npm run build` compile typescript to js
-* `npm run watch` watch for changes and compile
-* `npm run lint` check file formatting
-* `npm run test` run the unit tests
+- `npm run build` compile typescript to js
+- `npm run watch` watch for changes and compile
+- `npm run lint` check file formatting
+- `npm run test` run the unit tests
 
 ### Setup
 
