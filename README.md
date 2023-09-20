@@ -2,13 +2,15 @@
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 
-Code to deploy infrastructure on the "AWS LI Hydro Surveys Prod" account (#434775598764).
+Code to deploy AWS LI Hydro surveys infrastructure.
 
 ## Use
 
-- `npm run cdk deploy` deploy this stack to your default AWS account/region
-- `npm run cdk diff` compare deployed stack with current state
+Authenticate using `aws-azure-login --no-prompt --profile="$AWS_PROFILE"`
+
 - `npm run cdk synth` emits the synthesized CloudFormation template
+- `npm run cdk diff` compare deployed stack with current state
+- `npm run cdk deploy` deploy this stack to your default AWS account/region
 
 ## Development
 
