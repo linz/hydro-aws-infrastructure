@@ -77,8 +77,8 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4.0.0
         with:
           aws-region: ap-southeast-2
-          role-to-assume: ${{ github.ref == 'refs/heads/master' && 'TBD' || 'arn:aws:iam::623931144233:role/ContinuousIntegration-GitHubActionsRole4F1BBA26-WDE0O3ZN93A6' }}
+          role-to-assume: ${{ github.ref == 'refs/heads/master' && 'arn:aws:iam::434775598764:role/ContinuousIntegration-GitHubActionsRole4F1BBA26-U1I7SY11QA7D' || 'arn:aws:iam::623931144233:role/ContinuousIntegration-GitHubActionsRole4F1BBA26-WDE0O3ZN93A6' }}
 
       - name: Deploy
         if: github.repository == 'linz/hydro-aws-infrastructure'
-        run: npm run cdk deploy --require-approval=never --role-arn=${{ github.ref == 'refs/heads/master' && 'TBD' || 'arn:aws:iam::623931144233:role/ContinuousIntegration-CiExecRoleAA6BFF70-CTEJ6J3L1NVU' }} --verbose
+        run: npm run cdk deploy --  --method=direct --require-approval=never --role-arn=${{ github.ref == 'refs/heads/master' && 'arn:aws:iam::434775598764:role/ContinuousIntegration-CiExecRoleAA6BFF70-1SL2099R0R4A2' || 'arn:aws:iam::623931144233:role/ContinuousIntegration-CiExecRoleAA6BFF70-CTEJ6J3L1NVU' }} --strict --verbose
