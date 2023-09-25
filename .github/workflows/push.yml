@@ -19,7 +19,7 @@ jobs:
         uses: linz/action-typescript@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-          registry-url: 'https://npm.pkg.github.com'
+          registry-url: https://npm.pkg.github.com
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
