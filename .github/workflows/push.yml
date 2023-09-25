@@ -64,7 +64,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://npm.pkg.github.com/
-          scope: '@linz'
           cache: npm
 
       - name: Install production Node.js packages
