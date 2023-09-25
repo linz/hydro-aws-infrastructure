@@ -65,11 +65,11 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://npm.pkg.github.com/
           cache: npm
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Install production Node.js packages
         run: npm ci --omit=dev
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Configure AWS Credentials
         if: github.repository == 'linz/hydro-aws-infrastructure'
