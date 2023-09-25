@@ -69,6 +69,8 @@ jobs:
 
       - name: Install production Node.js packages
         run: npm ci --omit=dev
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Configure AWS Credentials
         if: github.repository == 'linz/hydro-aws-infrastructure'
