@@ -4,26 +4,30 @@
 
 Code to deploy AWS LI Hydro surveys infrastructure.
 
-## Use
-
-Authenticate using `aws-azure-login --no-prompt --profile="$AWS_PROFILE"`
-
-- `npm run cdk synth` emits the synthesized CloudFormation template
-- `npm run cdk diff` compare deployed stack with current state
-- `npm run cdk deploy` deploy this stack to your default AWS account/region
-
-## Development
-
-- `npm run build` compile typescript to js
-- `npm run watch` watch for changes and compile
-- `npm run lint` check file formatting
-- `npm run test` run the unit tests
-
-### Setup
+## Setup
 
 Prerequisites:
 
 - Install and configure [Node Version Manager](https://github.com/nvm-sh/nvm)
 
 1. Run `nvm install && nvm use` within this project root to use the configured Node.js version. Repeat this and following steps when `.nvmrc` changes.
-1. Run `npm i` to install packages. Repeat when `package-lock.json` changes.
+1. Install packages (repeat when `package-lock.json` changes):
+   1. If you're just _deploying_ and not doing development, run `npm install --omit=dev` to install only production packages.
+   1. If you're doing _development,_ run `npm install` to install all packages.
+
+## Use
+
+Authenticate using `aws-azure-login --no-prompt --profile="$AWS_PROFILE"`, where `$AWS_PROFILE` is the name of one of the profiles in your `~/.aws/config` file.
+
+- `npm run cdk diff -- --fail --strict` compares the deployed stack with the current state.
+- `npm run cdk deploy -- --method=direct --strict` deploys this stack.
+
+**Beware: You _must_ run commands like `npm run RUN_OPTIONS COMMAND -- COMMAND_OPTIONS` (note the `--`). `npm run RUN_OPTIONS COMMAND COMMAND_OPTIONS` (without the `--`) will _not_ do what you expect - [all options will be treated like `npm run` options](https://github.com/npm/cli/issues/6638)!**
+
+## Development
+
+- `npm run build` compiles TypeScript to JavaScript.
+- `npm run watch` compiles files when files change.
+- `npm run lint` checks file formatting.
+- `npm run test` runs the tests.
+- `npm run cdk synth` emits the synthesized CloudFormation template.
