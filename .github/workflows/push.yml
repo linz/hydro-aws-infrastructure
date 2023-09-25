@@ -81,4 +81,4 @@ jobs:
 
       - name: Deploy
         if: github.repository == 'linz/hydro-aws-infrastructure'
-        run: npm run cdk deploy --  --method=direct --require-approval=never --role-arn=${{ github.ref == 'refs/heads/master' && 'arn:aws:iam::434775598764:role/ContinuousIntegration-CiExecRoleAA6BFF70-1SL2099R0R4A2' || 'arn:aws:iam::623931144233:role/ContinuousIntegration-CiExecRoleAA6BFF70-CTEJ6J3L1NVU' }} --strict --verbose
+        run: npm run cdk deploy -- --method=direct --require-approval=never --role-arn=${{ github.ref == 'refs/heads/master' && 'arn:aws:iam::434775598764:role/ContinuousIntegration-CiExecRoleAA6BFF70-1SL2099R0R4A2' || 'arn:aws:iam::623931144233:role/ContinuousIntegration-CiExecRoleAA6BFF70-CTEJ6J3L1NVU' }} --strict --verbose
