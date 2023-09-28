@@ -21,6 +21,12 @@ repos:
         name: Check Github workflows
         stages: [commit]
 
+  - repo: https://github.com/koalaman/shellcheck-precommit
+    rev: 3f77b826548d8dc2d26675f077361c92773b50a7 # frozen: v0.9.0
+    hooks:
+      - id: shellcheck
+        stages: [commit]
+
   - repo: local
     hooks:
       - id: pathchk
