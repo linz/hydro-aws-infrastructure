@@ -8,7 +8,7 @@ shopt -s failglob inherit_errexit
 move_command=(echo aws s3 mv --dryrun --quiet --recursive)
 
 bucket_root='s3://hydro-data-bucket-418528898914'
-authoritative_surveys="${bucket_root}/Authoritative_Surveys/"
+authoritative_surveys="${bucket_root}/Authoritative_Surveys"
 
 echo 'Move everything from HSXX-XX to Authoritative_Surveys'
 #
@@ -20,8 +20,8 @@ echo 'Move everything from HSXX-XX to Authoritative_Surveys'
 #
 # TODO: Include HS60-69 when ready
 for prefix in HS10-19 HS47-51 HS52-54 HS55-57 HS70-79; do
-    "${move_command[@]}" "${bucket_root}/${prefix}/" "$authoritative_surveys"
-done &> hsxx-xx.log
+    "${move_command[@]}" "${bucket_root}/${prefix}/" "${authoritative_surveys}/"
+done
 
 echo
 echo 'Move HS71, which is highest priority'
