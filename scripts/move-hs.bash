@@ -22,3 +22,10 @@ echo 'Move everything from HSXX-XX to Authoritative_Surveys'
 for prefix in HS10-19 HS47-51 HS52-54 HS55-57 HS70-79; do
     "${move_command[@]}" "${bucket_root}/${prefix}/" "$authoritative_surveys"
 done &> hsxx-xx.log
+
+echo
+echo 'Move HS71, which is highest priority'
+# Requires "Change ownership to hydro account" for HS71.
+"${move_command[@]}" \
+    "${bucket_root}/HS71/" \
+    "${authoritative_surveys}/HS71/"
