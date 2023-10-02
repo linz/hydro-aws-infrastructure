@@ -86,36 +86,36 @@ echo 'Move HS60-69 when ready' >&2
 #    "${bucket_root}/${pre}/" \
 #    "${authoritative_surveys}/${post}/"
 
-echo >&2
-echo >&2
-echo 'Move everything starting with "HS" into "Authoritative_Surveys" up to HS49' >&2
-echo 'Replace spaces and hyphens with underscores' >&2
-for original_prefix in \
-    'HS20_Abel_Tasman' \
-    'HS21_Akaroa_Harbour' \
-    'HS22_Milford_Sound' \
-    'HS23_Dusky_BreakseaSounds' \
-    'HS24_Milford_Sound_Unsurveyed_Area' \
-    'HS25_Doubtful_Thompson_Sounds' \
-    'HS27_Great_Barrier_Island' \
-    'HS28_Paterson_Inlet' \
-    'HS29_Poor_Knights_Islands_2009' \
-    'HS30_Hen_Chicken_Islands' \
-    'HS31_Chatham_Islands' \
-    'HS32_Mercury_Bay' \
-    'HS33_Poor_Knights_Islands' \
-    'HS35_Whitianga_Harbour' \
-    'HS36_Shipping_Lane_6' \
-    'HS38-Bay of Islands' \
-    'HS39_Bay_of_Plenty' \
-    'HS40_Chalky_Preservation_Inlet' \
-    'HS41_Tutuakaka_Harbour' \
-    'HS47-Whangaruru-Harbour' \
-    'HS48-Hokianga Harbour' \
-    'HS49-Parengarenga Harbour'; do
-    new_prefix="$(printf '%s' "$original_prefix" | tr ' -' '_')"
-    "${move_command[@]}" \
-        "${bucket_root}/${original_prefix}/" \
-        "${authoritative_surveys}/${new_prefix}/"
-    echo >&2
-done
+#echo >&2
+#echo >&2
+#echo 'Move everything starting with "HS" into "Authoritative_Surveys" up to HS49' >&2
+#echo 'Replace spaces and hyphens with underscores' >&2
+#for original_prefix in \
+#    'HS20_Abel_Tasman' \
+#    'HS21_Akaroa_Harbour' \
+#    'HS22_Milford_Sound' \
+#    'HS23_Dusky_BreakseaSounds' \
+#    'HS24_Milford_Sound_Unsurveyed_Area' \
+#    'HS25_Doubtful_Thompson_Sounds' \
+#    'HS27_Great_Barrier_Island' \
+#    'HS28_Paterson_Inlet' \
+#    'HS29_Poor_Knights_Islands_2009' \
+#    'HS30_Hen_Chicken_Islands' \
+#    'HS31_Chatham_Islands' \
+#    'HS32_Mercury_Bay' \
+#    'HS33_Poor_Knights_Islands' \
+#    'HS35_Whitianga_Harbour' \
+#    'HS36_Shipping_Lane_6' \
+#    'HS38-Bay of Islands' \
+#    'HS39_Bay_of_Plenty' \
+#    'HS40_Chalky_Preservation_Inlet' \
+#    'HS41_Tutuakaka_Harbour' \
+#    'HS47-Whangaruru-Harbour' \
+#    'HS48-Hokianga Harbour' \
+#    'HS49-Parengarenga Harbour'; do
+#    new_prefix="$(printf '%s' "$original_prefix" | tr ' -' '_')"
+#    "${move_command[@]}" \
+#        "${bucket_root}/${original_prefix}/" \
+#        "${authoritative_surveys}/${new_prefix}/"
+#    echo >&2
+#done
