@@ -59,14 +59,14 @@ echo 'Move HS71, which is highest priority'
 #    "${bucket_root}/${pre}/" \
 #    "${authoritative_surveys}/${post}/"
 
-echo
-echo
-pre='HS44 - Mangonui Harbour'
-post='HS44_Mangonui_Harbour'
-echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'"
-"${move_command[@]}" \
-    "${bucket_root}/${pre}/" \
-    "${authoritative_surveys}/${post}/"
+#echo
+#echo
+#pre='HS44 - Mangonui Harbour'
+#post='HS44_Mangonui_Harbour'
+#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'"
+#"${move_command[@]}" \
+#    "${bucket_root}/${pre}/" \
+#    "${authoritative_surveys}/${post}/"
 
 echo
 echo
