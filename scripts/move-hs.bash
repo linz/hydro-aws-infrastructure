@@ -26,11 +26,8 @@ authoritative_surveys="${bucket_root}/Authoritative_Surveys"
 
 echo
 echo
-echo 'Move HS71, which is highest priority'
-# Requires "Change ownership to hydro account" for HS71.
-"${move_command[@]}" \
-    "${bucket_root}/HS71/" \
-    "${authoritative_surveys}/HS71/"
+echo 'Move HS71 when available'
+"${move_command[@]}" "${bucket_root}/HS71/" "${authoritative_surveys}/HS71/"
 
 #echo
 #echo
