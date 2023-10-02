@@ -22,16 +22,6 @@ authoritative_surveys="${bucket_root}/Authoritative_Surveys"
 #    "${move_command[@]}" "${bucket_root}/${prefix}/" "${authoritative_surveys}/"
 #done
 
-echo >&2
-echo >&2
-echo 'Move HS71 when available' >&2
-"${move_command[@]}" "${bucket_root}/HS71/" "${authoritative_surveys}/HS71/"
-
-echo >&2
-echo >&2
-echo 'Move HS60-69 when ready' >&2
-"${move_command[@]}" "${bucket_root}/HS60-69/" "${authoritative_surveys}/"
-
 #echo >&2
 #echo >&2
 #pre='HS41 - Whangaroa Harbour'
