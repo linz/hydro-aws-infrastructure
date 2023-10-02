@@ -10,7 +10,7 @@ move_command=(aws s3 mv --dryrun --recursive)
 bucket_root='s3://hydro-data-bucket-418528898914'
 authoritative_surveys="${bucket_root}/Authoritative_Surveys"
 
-#echo 'Move everything from HSXX-XX to Authoritative_Surveys'
+#echo 'Move everything from HSXX-XX to Authoritative_Surveys' >&2
 #
 # This replaces the first part of the prefixes with a fixed string, so we have to use `scripts/dupes.bash hsxx-xx.log`
 # to check for duplicates before running for real.
@@ -22,74 +22,74 @@ authoritative_surveys="${bucket_root}/Authoritative_Surveys"
 #    "${move_command[@]}" "${bucket_root}/${prefix}/" "${authoritative_surveys}/"
 #done
 
-echo
-echo
-echo 'Move HS71 when available'
+echo >&2
+echo >&2
+echo 'Move HS71 when available' >&2
 "${move_command[@]}" "${bucket_root}/HS71/" "${authoritative_surveys}/HS71/"
 
-echo
-echo
-echo 'Move HS60-69 when ready'
+echo >&2
+echo >&2
+echo 'Move HS60-69 when ready' >&2
 "${move_command[@]}" "${bucket_root}/HS60-69/" "${authoritative_surveys}/"
 
-#echo
-#echo
+#echo >&2
+#echo >&2
 #pre='HS41 - Whangaroa Harbour'
 #post='HS41_Whangaroa_Harbour'
-#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'"
+#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'" >&2
 #"${move_command[@]}" \
 #    "${bucket_root}/${pre}/" \
 #    "${authoritative_surveys}/${post}/"
 
-#echo
-#echo
+#echo >&2
+#echo >&2
 #pre='HS42 - Auckland Islands'
 #post='HS42_Auckland_Islands'
-#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'"
+#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'" >&2
 #"${move_command[@]}" \
 #    "${bucket_root}/${pre}/" \
 #    "${authoritative_surveys}/${post}/"
 
-#echo
-#echo
+#echo >&2
+#echo >&2
 #pre='HS43 - Houhora_Harbour'
 #post='HS43_Houhora_Harbour'
-#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'"
+#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'" >&2
 #"${move_command[@]}" \
 #    "${bucket_root}/${pre}/" \
 #    "${authoritative_surveys}/${post}/"
 
-#echo
-#echo
+#echo >&2
+#echo >&2
 #pre='HS44 - Mangonui Harbour'
 #post='HS44_Mangonui_Harbour'
-#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'"
+#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'" >&2
 #"${move_command[@]}" \
 #    "${bucket_root}/${pre}/" \
 #    "${authoritative_surveys}/${post}/"
 
-#echo
-#echo
+#echo >&2
+#echo >&2
 #pre='HS45 - Omaha-Cove'
 #post='HS45_Omaha_Cove'
-#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'"
+#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'" >&2
 #"${move_command[@]}" \
 #    "${bucket_root}/${pre}/" \
 #    "${authoritative_surveys}/${post}/"
 
-#echo
-#echo
+#echo >&2
+#echo >&2
 #pre='HS46 - Doubtless_Rangaunu-bay'
 #post='HS46_Doubtless_Rangaunu_bay'
-#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'"
+#echo "Rename '${pre}' to 'Authoritative_Surveys/${post}'" >&2
 #"${move_command[@]}" \
 #    "${bucket_root}/${pre}/" \
 #    "${authoritative_surveys}/${post}/"
 
-echo
-echo
-echo 'Move everything starting with "HS" into "Authoritative_Surveys" up to HS49'
-echo 'Replace spaces and hyphens with underscores'
+echo >&2
+echo >&2
+echo 'Move everything starting with "HS" into "Authoritative_Surveys" up to HS49' >&2
+echo 'Replace spaces and hyphens with underscores' >&2
 for original_prefix in \
     'HS20_Abel_Tasman' \
     'HS21_Akaroa_Harbour' \
@@ -117,5 +117,5 @@ for original_prefix in \
     "${move_command[@]}" \
         "${bucket_root}/${original_prefix}/" \
         "${authoritative_surveys}/${new_prefix}/"
-    echo
+    echo >&2
 done
