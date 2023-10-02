@@ -22,12 +22,15 @@ authoritative_surveys="${bucket_root}/Authoritative_Surveys"
 #    "${move_command[@]}" "${bucket_root}/${prefix}/" "${authoritative_surveys}/"
 #done
 
-# TODO: Include HS60-69 when ready
-
 echo
 echo
 echo 'Move HS71 when available'
 "${move_command[@]}" "${bucket_root}/HS71/" "${authoritative_surveys}/HS71/"
+
+echo
+echo
+echo 'Move HS60-69 when ready'
+"${move_command[@]}" "${bucket_root}/HS60-69/" "${authoritative_surveys}/"
 
 #echo
 #echo
