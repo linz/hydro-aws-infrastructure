@@ -119,45 +119,38 @@ echo 'Move everything from Data/Authoritative_Surveys to Authoritative_Surveys' 
 
 echo >&2
 echo >&2
-echo 'Move HYD-2007-2008 to Authoritative_Surveys' >&2
+echo 'Move HYD-2007-2008 contents to Authoritative_Surveys' >&2
 "${move_command[@]}" \
     "${bucket_root}/HYD-2007-2008/" \
-    "${authoritative_surveys}/HYD-2007-2008/"
+    "${authoritative_surveys}/"
 
 echo >&2
 echo >&2
-echo 'Move Authoritative_Surveys/HS58/CentralFiords to Authoritative_Surveys/HS58_CentralFiords' >&2
+echo 'Move HS58/CentralFiords to Authoritative_Surveys/HS58_CentralFiords' >&2
 "${move_command[@]}" \
-    "${authoritative_surveys}/HS58/CentralFiords/" \
+    "${bucket_root}/HS58/CentralFiords/" \
     "${authoritative_surveys}/HS58_CentralFiords/"
 
 echo >&2
 echo >&2
-echo 'Move Authoritative_Surveys/HS58/SouthernFiords to Authoritative_Surveys/HS58_SouthernFiords' >&2
+echo 'Move HS58/SouthernFiords to Authoritative_Surveys/HS58_SouthernFiords' >&2
 "${move_command[@]}" \
-    "${authoritative_surveys}/HS58/SouthernFiords/" \
+    "${bucket_root}/HS58/SouthernFiords/" \
     "${authoritative_surveys}/HS58_SouthernFiords/"
 
 echo >&2
 echo >&2
-echo 'Move "HS57 - Kaikoura - Cape Campbell/HYD 1718-HS57 DML finals compress" to "Authoritative_Surveys/HS57_Kaikoura_CapeCampbell/DML"' >&2
+echo 'Move "HS57 - Kaikoura - Cape Campbell/HYD 1718-HS57 DML finals" to "Authoritative_Surveys/HS57_Kaikoura_CapeCampbell/DML"' >&2
 "${move_command[@]}" \
-    "${bucket_root}/HS57 - Kaikoura - Cape Campbell/HYD 1718-HS57 DML finals compress/" \
+    "${bucket_root}/HS57 - Kaikoura - Cape Campbell/HYD 1718-HS57 DML finals/" \
     "${authoritative_surveys}/HS57_Kaikoura_CapeCampbell/DML/"
 
 echo >&2
 echo >&2
-echo 'Move "HS57 - Kaikoura - Cape Campbell/HYD 1718-HS57 iXblue finals compress finals compress" to "Authoritative_Surveys/HS57_Kaikoura_CapeCampbell/IXBLUE"' >&2
+echo 'Move "HS57 - Kaikoura - Cape Campbell/HYD 1718-HS57 iXblue finals" to "Authoritative_Surveys/HS57_Kaikoura_CapeCampbell/IXBLUE"' >&2
 "${move_command[@]}" \
-    "${bucket_root}/HS57 - Kaikoura - Cape Campbell/HYD 1718-HS57 iXblue finals compress finals compress/" \
+    "${bucket_root}/HS57 - Kaikoura - Cape Campbell/HYD 1718-HS57 iXblue finals/" \
     "${authoritative_surveys}/HS57_Kaikoura_CapeCampbell/IXBLUE/"
-
-echo >&2
-echo >&2
-echo 'Take all remaining files/folders under "HS57 - Kaikoura - Cape Campbell" and put them into "Authoritative_Surveys/HS57/LINZ_QA"' >&2
-"${move_command[@]}" \
-    "${bucket_root}/HS57 - Kaikoura - Cape Campbell/" \
-    "${authoritative_surveys}/HS57/LINZ_QA/"
 
 echo >&2
 echo >&2
@@ -165,3 +158,10 @@ echo 'Move "HS57-WCD" to "Authoritative_Surveys/HS57_Kaikoura_CapeCampbell/IXBLU
 "${move_command[@]}" \
     "${bucket_root}/HS57-WCD/" \
     "${authoritative_surveys}/HS57_Kaikoura_CapeCampbell/IXBLUE/WCD/"
+#
+#echo >&2
+#echo >&2
+#echo 'Take all remaining files/folders under "HS57 - Kaikoura - Cape Campbell" and put them into "Authoritative_Surveys/HS57/LINZ_QA"' >&2
+#"${move_command[@]}" \
+#    "${bucket_root}/HS57 - Kaikoura - Cape Campbell/" \
+#    "${authoritative_surveys}/HS57/LINZ_QA/"
