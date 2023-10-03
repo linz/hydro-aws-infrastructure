@@ -15,7 +15,7 @@ repos:
         stages: [commit]
 
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: ebdf1faf0ebf43b29c659da8741252c925e690c8 # frozen: 0.26.3
+    rev: e7d0eab291c8a1565ca729002d82b077097115b8 # frozen: 0.27.0
     hooks:
       - id: check-github-workflows
         name: Check Github workflows
