@@ -23,8 +23,8 @@ echo >&2
 echo >&2
 echo 'Move everything under HS59/FinalDeliverables to Authoritative_Surveys/HS59' >&2
 "${move_command[@]}" \
-    "${bucket_root}//" \
-    "${authoritative_surveys}/"
+    "${bucket_root}/HS59/FinalDeliverables/" \
+    "${authoritative_surveys}/HS59/"
 
 echo >&2
 echo >&2
