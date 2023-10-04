@@ -26,13 +26,6 @@ echo 'Move everything under HS59/FinalDeliverables to Authoritative_Surveys/HS59
     "${bucket_root}//" \
     "${authoritative_surveys}/"
 
-#echo >&2
-#echo >&2
-#echo 'HS20 - HS49 Compress every folder under these ie HS21_Akaroa_Harbour/ASCII Thick & Thin data and HS21_Akaroa_Harbour/GSF Thick data' >&2
-#"${move_command[@]}" \
-#    "${bucket_root}//" \
-#    "${authoritative_surveys}/"
-
 echo >&2
 echo >&2
 echo 'Move HS60-69/HS66/DML/FinalDeliverables to Authoritative_Surveys/HS66/DML' >&2
