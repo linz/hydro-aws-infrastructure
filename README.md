@@ -13,7 +13,9 @@ Prerequisites:
 1. Run `nvm install && nvm use` within this project root to use the configured Node.js version. Repeat this and following steps when `.nvmrc` changes.
 1. Install packages (repeat when `package-lock.json` changes):
    1. If you're just _deploying_ and not doing development, run `npm install --omit=dev` to install only production packages.
-   1. If you're doing _development,_ run `npm install` to install all packages.
+   1. If you're doing _development:_
+      - Run `npm install` to install all packages.
+      - Optionally install `pre-commit`, then run `pre-commit install --hook-type=commit-msg --hook-type=pre-commit --overwrite` to install the hooks which will automatically lint and format files when committing, and verify commit messages.
 
 ## Use
 
@@ -31,3 +33,4 @@ Authenticate using `aws-azure-login --no-prompt --profile="$AWS_PROFILE"`, where
 - `npm run lint` checks file formatting.
 - `npm run test` runs the tests.
 - `npm run cdk synth` emits the synthesized CloudFormation template.
+- `pre-commit run --all-files` runs other linters and formatters manually.
