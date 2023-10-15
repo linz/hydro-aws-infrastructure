@@ -80,4 +80,4 @@ jobs:
           role-to-assume: ${{ github.ref == 'refs/heads/master' && 'arn:aws:iam::434775598764:role/ContinuousIntegration-GitHubActionsRole4F1BBA26-U1I7SY11QA7D' || 'arn:aws:iam::623931144233:role/ContinuousIntegration-GitHubActionsRole4F1BBA26-WDE0O3ZN93A6' }}
 
       - name: Deploy
-        run: npm run cdk deploy -- --method=direct --require-approval=never --role-arn=${{ github.ref == 'refs/heads/master' && 'arn:aws:iam::434775598764:role/ContinuousIntegration-CiExecRoleAA6BFF70-1SL2099R0R4A2' || 'arn:aws:iam::623931144233:role/ContinuousIntegration-CiExecRoleAA6BFF70-CTEJ6J3L1NVU' }} --strict --verbose
+        run: npm run cdk deploy -- --method=direct --require-approval=never --strict --verbose
