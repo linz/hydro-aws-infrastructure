@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@linz/accounts": "^3.37.0",
-    "@linzjs/style": "^5.0.0",
+    "@linzjs/style": "^5.1.0",
     "aws-cdk": "2.101.1",
     "aws-cdk-lib": "2.101.1",
     "constructs": "^10.3.0",
