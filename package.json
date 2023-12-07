@@ -16,8 +16,8 @@
   "dependencies": {
     "@linz/accounts": "^3.37.0",
     "@linzjs/style": "^5.0.0",
-    "aws-cdk": "2.101.1",
-    "aws-cdk-lib": "2.101.1",
+    "aws-cdk": "2.114.1",
+    "aws-cdk-lib": "2.114.1",
     "constructs": "^10.3.0",
     "source-map-support": "^0.5.21",
     "ts-node": "^10.9.1"
